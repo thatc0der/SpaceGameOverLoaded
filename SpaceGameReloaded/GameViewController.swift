@@ -11,10 +11,10 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      
         if let view = self.view as! SKView? {
             // Load the SKScene from 'MenuScene.sks'
             if let scene = SKScene(fileNamed: "MenuScene") {

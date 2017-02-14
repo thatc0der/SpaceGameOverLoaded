@@ -19,7 +19,6 @@ class MenuScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        
         starfield = self.childNode(withName: "starfield") as! SKEmitterNode
         starfield.advanceSimulationTime(10)
         
@@ -40,6 +39,8 @@ class MenuScene: SKScene {
         }
     }
     
+   
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -48,14 +49,19 @@ class MenuScene: SKScene {
             let nodesArray = self.nodes(at: location)
             
             if nodesArray.first?.name == "newGameButton" {
-                let transition = SKTransition.flipHorizontal(withDuration: 0.5)
+                
+                
+                let transition = SKTransition.flipVertical(withDuration: 0.5)
+                
                 let gameScene = GameScene(size: self.size)
+                
                 self.view!.presentScene(gameScene, transition: transition)
+                
+                
             } else if nodesArray.first?.name == "difficultyButton" {
                 changeDifficulty()
             }
         }
-        
     }
     
     func changeDifficulty() {
